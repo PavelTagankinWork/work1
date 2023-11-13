@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Lato;
+    src: url('fonts/Lato-Regular.woff2');
+}
+
+body {
+    font-family: Lato;
+    margin: 0;
+}
+
+.project-button {
+    height: 39px;
+    padding: 5px;
+    width: 39px;
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #e5e5e5;
+    color: black;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.project-button:hover {
+    background-color: #0056b3;
+    color: #f2f2f2;
+}

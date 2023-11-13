@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>SF_001</title>
+</head>
+<body>
+    <div>
+        <div class="settings">
+            <div>
+                <h2>Настройки</h2>
+                <div class="settings__train-number">
+                    <h3 class="train-number-title">Номер Поезда</h3>
+                    <div class="train-number-input">
+                        <input type="text">
+                        <button class="train-number-button clear-button">C</button>
+                        <h5 class="train-number-input-text">Стереть</h5>
+                    </div>
+                    <div class="train-number-buttons">
+                        <button class="train-number-button number-button">1</button>
+                        <button class="train-number-button number-button">2</button>
+                        <button class="train-number-button number-button">3</button>
+                        <button class="train-number-button number-button">4</button>
+                        <button class="train-number-button number-button">5</button>
+                        <button class="train-number-button number-button">6</button>
+                        <button class="train-number-button number-button">7</button>
+                        <button class="train-number-button number-button">8</button>
+                        <button class="train-number-button number-button">9</button>
+                        <button class="train-number-button number-button">0</button>
+                    </div>
+                </div>
+                <div class="settings__head-number">
+                    <h3 class="train-number-title">Номер головного вагона</h3>
+                    <div class="train-inputs">
+                        <div>
+                            <input type="radio" id="number-radio-1" name="train">
+                                <button class="train-number-button number-train-button number-button-1">Тест</button>
+                            </input>
+                        </div>
+                        <div>
+                            <input type="radio" id="number-radio-2" name="train">
+                                <button class="train-number-button number-train-button number-button-2">Тест</button>
+                            </input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <div class="project">
+            <h2>Проект</h2>
+            <div class="project-block">
+                <div class="projects">
+                    <ul class="project-list">
+                        <li class="project-item project-item-active">ЦППК ЭП2Д/ЭП3Д/ЭД4М</li>
+                        <li class="project-item">ЦППК ЭП2Д/ЭП3Д/ЭД4М</li>
+                        <li class="project-item">ЦППК ЭП2Д/ЭП3Д/ЭД4М</li>
+                    </ul>
+                </div>
+                <div>
+                    <div>
+                        <button type="button" class="project-button" id="projectUp">A</button>
+                        <span>Вперед</span>
+                    </div>
+                    <div>
+                        <button type="button" class="project-button" id="projectDown">B</button>
+                        <span>Назад</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accept">
+            <div class="accept-block">
+                <div>
+                    <button type="button" class="project-button">F8</button>
+                    <span>Отменить</span>
+                </div>
+                <div>
+                    <button type="button" class="project-button">F12</button>
+                    <span>Применить</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const numberButtons = document.querySelectorAll('.number-button');
+          const trainNumberInput = document.querySelector('.train-number-input input');
+          const clearButton = document.querySelector('.clear-button');
+          const trainButton1 = document.querySelector('.number-button-1');
+          const radioInput1 = document.querySelector('#number-radio-1');
+          const trainButton2 = document.querySelector('.number-button-2');
+          const radioInput2 = document.querySelector('#number-radio-2');
+          const projectUpButton = document.getElementById('projectUp');
+          const projectDownButton = document.getElementById('projectDown');
+          const projectList = document.querySelector('.project-list');
+          const projectItems = projectList.querySelectorAll('.project-item');
+          
+      
+          numberButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+              const number = button.textContent;
+              trainNumberInput.value += number;
+            });
+          });
+
+          clearButton.addEventListener('click', () => {
+            trainNumberInput.value = '';
+          })
+
+          trainButton1.addEventListener('click', function() {
+            radioInput1.checked = true;
+          });
+
+          trainButton2.addEventListener('click', function() {
+            radioInput2.checked = true;
+          });
+
+          projectUpButton.addEventListener('click', function() {
+            const activeItem = projectList.querySelector('.project-item-active');
+            if (activeItem) {
+                if (activeItem.previousElementSibling) {
+                activeItem.classList.remove('project-item-active');
+                activeItem.previousElementSibling.classList.add('project-item-active');
+            } else {
+                projectItems[projectItems.length - 1].classList.add('project-item-active');
+                activeItem.classList.remove('project-item-active');
+            }
+            }
+         });
+
+         projectDownButton.addEventListener('click', function() {
+            const activeItem = projectList.querySelector('.project-item-active');
+            if (activeItem) {
+                if (activeItem.nextElementSibling) {
+                activeItem.classList.remove('project-item-active');
+                activeItem.nextElementSibling.classList.add('project-item-active');
+            } else {
+                projectItems[0].classList.add('project-item-active');
+                activeItem.classList.remove('project-item-active');
+            }
+            }
+         });
+        });
+      </script>
+      
+</body>
+</html>  

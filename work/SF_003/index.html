@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>SF_003</title>
+</head>
+<body>
+    <div  class="settings">
+        <div>
+            <h2 class="settings-title">Выполнить переход к настройке системы управления?</h2>
+            <div>
+                <button type="button" class="project-button" id="projectUp">F2</button>
+                <span>Настройка привязки устройств</span>
+            </div>
+            <div>
+                <button type="button" class="project-button" id="projectDown">F3</button>
+                <span>Настройка номера поезда, головного вагона, выбор проекта</span>
+                <br>
+                <span style="margin-left: 50px; font-size: 13px; font-weight: 400; margin-bottom: 20px;">Номер вагона: 220, Головной вагон 9, (IP: 10.8.64.9, S/N: 1033)</span>
+            </div>
+            <div>
+                <button type="button" class="project-button" id="projectUp">F4</button>
+                <span>Тест монитора и клавиатуры</span>
+            </div>
+        </div>
+        <div class="password">
+            <div class="settings__train-number">        
+                <div class="train-number-input">
+                    <h3 class="train-number-title">Для настройки введите пароль:</h3>
+                    <input type="password">
+                    <button class="train-number-button clear-button">C</button>
+                    <h5 class="train-number-input-text">Стереть</h5>
+                </div>
+                <div class="train-number-buttons">
+                    <button class="train-number-button number-button">1</button>
+                    <button class="train-number-button number-button">2</button>
+                    <button class="train-number-button number-button">3</button>
+                    <button class="train-number-button number-button">4</button>
+                    <button class="train-number-button number-button">5</button>
+                    <button class="train-number-button number-button">6</button>
+                    <button class="train-number-button number-button">7</button>
+                    <button class="train-number-button number-button">8</button>
+                    <button class="train-number-button number-button">9</button>
+                    <button class="train-number-button number-button">0</button>
+                </div>
+            </div>
+        </div>
+        <div class="confirm">
+            <div class="confirm-block">
+                <div>
+                    <button type="button" class="project-button accept-button">F8</button>
+                    <span>Отменить</span>
+                </div>
+                <div>
+                    <button type="button" class="project-button accept-button">F12</button>
+                    <span>Применить</span>
+                </div>
+                <span>Транстелесофт версия 4.0.1</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const numberButtons = document.querySelectorAll('.number-button');
+          const trainNumberInput = document.querySelector('.train-number-input input');
+          const clearButton = document.querySelector('.clear-button');
+          
+      
+          numberButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+              const number = button.textContent;
+              trainNumberInput.value += number;
+            });
+          });
+
+          clearButton.addEventListener('click', () => {
+            trainNumberInput.value = '';
+          })
+        });
+      </script>
+</body>
+</html>

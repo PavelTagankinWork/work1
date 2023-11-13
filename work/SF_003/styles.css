@@ -1,0 +1,122 @@
+@font-face {
+    font-family: Lato;
+    src: url('fonts/Lato-Regular.woff2');
+}
+
+body {
+    font-family: Lato;
+    margin: 0;
+}
+
+.settings {
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+}
+
+.project-button {
+    height: 39px;
+    padding: 5px;
+    width: 39px;
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #e5e5e5;
+    color: black;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.project-button:hover {
+    background-color: #0056b3;
+    color: #f2f2f2;
+}
+
+.settings-title {
+    font-size: 17px;
+    line-height: 19px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.train-number-input {
+    display: flex;
+    align-items: center;
+}
+
+.train-number-title {
+    font-size: 15px;
+    line-height: 17px;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.train-number-input input {
+    font-size: 17px;
+    line-height: 19px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    outline: none;
+}
+
+.train-number-input input:active {
+    outline: 1px solid lightblue;
+}
+
+.train-number-button {
+    height: 39px;
+    padding: 5px;
+    width: 39px;
+    background-color: transparent;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.train-number-button:hover {
+    background-color: #0056b3;
+}
+
+.train-number-input-text {
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.number-button {
+    background-color: #e5e5e5;
+    color: black;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.number-button:hover {
+    color: #f2f2f2;
+}
+
+.confirm {
+    background-color: #f2f2f2;
+}
+
+.confirm-block {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.accept-button {
+    margin-bottom: 0;
+}
